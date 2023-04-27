@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de filmes</title>
+    <script src="js/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lista de filmes</title>
+</head>
+<!-- a ideia eh de um crud pra colocar no final da tabela mais filmes-->
+
+<body>
+    
+    <header><h1>Zuer Pop Blog</h1></header>    
+    
+    <main>
+        <div class="title">
+            <h2>Lista de filmes</h2>
+            <span>Coloque já recomendações de bons filmes com seus comentários e sinopses mais espontâneas</span>
+        </div>
+        
+        <div class="card">
+            <div class="lineInput">
+                <p>Nome</p>
+                <input type="text" id="nomeFilme" placeholder="Nome do filme">
+            </div>
+            <div class="lineInput">
+                <p>Diretor</p>
+                <input type="text" id="diretor" placeholder="Nome do diretor">
+            </div>
+            <div class="lineInput">
+                <p>link da imagem do filme</p>
+                <input type="text" id="linkimagem" placeholder="URL da imagem do filme">
+            </div>
+            <div class="lineInput">
+                <p>Sinopse</p>
+                <input type="text" id="sinopse" placeholder="Sinopse do filme">
+            </div>
+            <div class="lineInput">
+                <p>Comentario</p>
+                <input type="text" id="comentario" placeholder="Comentário sobre o filme">
+            </div>
+            <div class="lineInput">
+                <p>link imdb</p>
+                <input type="text" id="linkimdb" placeholder="Link da página do filme no IMDB">
+            </div> <!-- tem que botar pra receber a imagem e o site do imdb tbm(local) ou colocar automaticamente a do imdb-->
+            
+            <button type="button" onclick="salvar()" id="button1">salvar</button>
+        </div>
+
+        <div class="content">
+            <table border="1">
+                <thead>
+                    <th>numero</th>
+                    <th class="center">nome</th>
+                    <th>diretor</th>
+                    <th>imagem</th>
+                    <th>sinopse</th>
+                    <th>comentario(contem spoilers)</th>
+                    <th>imdb</th>
+                    <th>acoes</th>
+                </thead>
+                <tbody id="tbody">
+                    
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!--
+        aqui vai ser dinamico, mas só vou colocar um exemplo
+                    <!--Dúvida: quero padronizar, no CSS, as imagens da coluna de imagem e de imdb também, só que separadamente
+                    <tr>
+                        <td class="center">1</td>
+                        <td>Casino(1995)</td>
+                        <td>martin scorcese</td>
+                        <td><img src="img/cassino.jpg" alt="filme" width="150" height="200"></td>
+                        <td>historia real de um cara que teve um cassino</td>
+                        <td>faz você rir e sentir raiva ao mesmo tempo ; filme de máfia mt bom #1; O CARA MATA O OUTRO COM UMA CANETA, BIXO</td>
+                        <td><a href = "https://www.imdb.com/title/tt0112641/"><img src="img/imdb.png" width="100" height="50"></a></td>
+                        <td class="center">
+                            <img src="img/ruler-and-pencil.png" alt="" width="22">
+                            <img src="img/delete.png" alt="" width="22">
+
+    
+    
+    <table>
+    <tr>
+    <th>numero</th>
+    <th>nome</th>
+    <th>diretor</th>
+    <th>imagem</th>
+    <th>sinopse</th>
+    <th>comentario</th>
+    <th>imdb</th>
+    </tr>
+    
+    <tr>
+        <td>1</td>
+        <td>Casino(1995)</td>
+        <td>martin scorcese</td>
+        <td><img src="img/cassino.jpg" alt="filme" width="150" height="200"></td>
+        <td>historia real de um cara que teve um cassino</td>
+        <td>faz você rir e sentir raiva ao mesmo tempo ; filme de máfia mt bom #1; O CARA MATA O OUTRO COM UMA CANETA, BIXO</td>
+        <td><a href = "https://www.imdb.com/title/tt0112641/"><img src="img/imdb.png" width="100" height="50"></a></td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Once upon a time in America</td>
+        <td>sergio leone</td>
+        <td><img src="img/outamerica.jpg" width="150" height="200"></td>
+        <td>historia de uns amigos em nyc quando tava começando, a mafia era forte e os krl</td>
+        <td>musica e historia mt boas ; filme de máfia mt bom #2</td>
+        <td><a href = "https://www.imdb.com/title/tt0087843/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Shutter Island</td>
+        <td>Martin Scorcese</td>
+        <td><img src="img/shutter.jpg" width="150" height="200"></td>
+        <td>historia de um cara que ta suspeito com uma ilha -_-</td>
+        <td>puta que pariu plot muito bom mesmo; drama total; there's something strange about this island, buck</td>
+        <td><a href = "https://www.imdb.com/title/tt1130884/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>4</td>
+        <td>Pulp Fiction</td>
+        <td>Quentin Tarantino</td>
+        <td><img src="img/pulp.jpg" width="150" height="200"></td>
+        <td>historia de uns cara e um lutador envolvidos na mafia</td>
+        <td>SAY WHAT AGAIN, SAY WHAT AGAIN MOTHERFUCKER; surpreendentemente bom; casualidade de uma conversa; referências; excelente elenco; cara, mt massa que o personagem do samuel jackson resolveu sair, assista pra entender</td>
+        <td><a href = "https://www.imdb.com/title/tt0110912/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>5</td>
+        <td>Back to the Future 1,2,3</td>
+        <td>Robert Zemeckis</td>
+        <td><img src="img/backtothefuture.jpg" width="150" height="200"></td>
+        <td>um mlk e seu amigo cientista que viajam no tempo</td>
+        <td>um must watch de tecnologia; o 1 fez mais sucesso na época pq o marty beijou a propria mae k; o 2 tem mt tensão; o 3 é mt divertido e cheio de referencias ; delorean é mt bonito pqp</td>
+        <td><a href = "https://www.imdb.com/title/tt0088763/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>6</td>
+        <td>Indiana Jones</td>
+        <td>Steven Spielberg</td>
+        <td><img src="img/indiana.jpg" width="150" height="200"></td>
+        <td>um historiador vivendo altas aventuras haha</td>
+        <td>todos bons, menos o último, foi meio ruim</td>
+        <td><a href = "https://www.imdb.com/title/tt0097576/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>7</td>
+        <td>The Godfather</td>
+        <td>Francis Ford Copolla</td>
+        <td><img src="img/godfather.jpg" width="150" height="200"></td>
+        <td>a história de uma máfia italiana</td>
+        <td> lendario seriado de filme de mafia, mt bom msm ; mt marcante a ultima cena do terceiro filme ; Acho engraçado pq o mike falou, no primeiro filme, que nao seria que nem o pai dele, mas acabou sendo... não resistiu a tradição familiar, engraçado pq ele é o mais novo; mt massa as ideias passadas</td>
+        <td><a href = "https://www.imdb.com/title/tt0068646/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>8</td>
+        <td>The Terminator</td>
+        <td>James Cameron</td>
+        <td><img src="img/theterminator.jpg" width="150" height="200"></td>
+        <td>num mundo pos apocaliptico um cara volta no tempo pra proteger uma mulher que é a mae do capitao dele e na vdd ele vai porque ele é o pai</td>
+        <td> must watch de tecnologia ; muita tensão nos filmes ; todos bons, menos o último; PROTECT JOHN CONNOR</td>
+        <td><a href = "https://www.imdb.com/title/tt0088247/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>9</td>
+        <td>Rocky</td>
+        <td>Sylvester Stallone</td>
+        <td><img src="img/rocky.jpeg" width="150" height="200"></td>
+        <td>historia dum lutador que saiu das ruas e conquistou o titulo de melhor do mundo</td>
+        <td>seriado de filmes bons; mt empolgante quando ele ganha as lutas, a música é mt boa, mt envolvente ; historia de superação, disciplina</td>
+        <td><a href = "https://www.imdb.com/title/tt0075148/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>10</td>
+        <td>Kill Bill</td>
+        <td>Quentin Tarantino</td>
+        <td><img src="img/killbill.jpg" width="150" height="200"></td>
+        <td>lorinha que quer matar bill</td>
+        <td>PUTA QUE PARIU, simplesmente GENIAL; GENIAL; MUITA AÇÃO, O PAU COMENDO A TODO MOMENTO ; eu não gostei muito de kill bill 2, prefiro o 1</td>
+        <td><a href = "https://www.imdb.com/title/tt0266697/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>11</td>
+        <td>Inglorious Basterds</td>
+        <td>Quentin Tarantino</td>
+        <td><img src="img/inglourious.jpg" width="150" height="200"></td>
+        <td>historia de um pelotao que foi designado pra uma missao no territorio nazista</td>
+        <td>Boa ambientação, tensão, elenco; É divertido; plot muito bom; depois desse filme eu desisti de aprender alemao pq fiquei com mais raiva dos nazis</td>
+        <td><a href = "https://www.imdb.com/title/tt0361748/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>12</td>
+        <td>Django Unchained</td>
+        <td>Quentin Tarantino</td>
+        <td><img src="img/django.jpg" width="150" height="200"></td>
+        <td>historia de vingança de um negao</td>
+        <td>PAU COMENDO TODA HORA ; SANGUE, TIRO E CONFUSÃO</td>
+        <td><a href = "https://www.imdb.com/title/tt1853728/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>13</td>
+        <td>Mulholland Drive</td>
+        <td>David Lynch</td>
+        <td><img src="img/mulholland.jpg" width="150" height="200"></td>
+        <td>história duma moça que perdeu a memória e se envolveu em loucuras</td>
+        <td>loucura total, filme bem exótico e diferente</td>
+        <td><a href = "https://www.imdb.com/title/tt0166924/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>14</td>
+        <td>Memento</td>
+        <td>Christopher Nolan</td>
+        <td><img src="img/memento.jpg" width="150" height="200"></td>
+        <td>história de vingança dum cara que tem memoria curta e anota nas mãos o que ele tem que fazer</td>
+        <td>esse filme é literalmente de trás pra frente; GENIAL</td>
+        <td><a href = "https://www.imdb.com/title/tt0209144/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>15</td>
+        <td>Die Hard</td>
+        <td>John McTiernan</td>
+        <td><img src="img/diehard.jpg" width="150" height="200"></td>
+        <td>historia dum cara que todo mundo quer matar</td>
+        <td>seriado de filmes mt bom do Bruce wilis</td>
+        <td><a href = "https://www.imdb.com/title/tt0095016/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    <tr>
+        <td>16</td>
+        <td>The Good, the Bad and the Ugly</td>
+        <td>Sergio Leone</td>
+        <td><img src="img/thegood.jfif" width="150" height="200"></td>
+        <td>historia de faroeste em que todo mundo quer o dinheiro</td>
+        <td>O MAIS CLÁSSICO FILME DE FAROESTE ; muito bom, foi dele que saiu aquela música na flauta que você pensa na hora quando se fala em FAROESTE</td>
+        <td><a href = "https://www.imdb.com/title/tt0060196/"><img src="img/imdb.png" width="100" height="50"></a></td>
+        </tr>
+    </table>
+    -->
+</body>
+</html>

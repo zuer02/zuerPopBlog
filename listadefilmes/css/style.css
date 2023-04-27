@@ -1,0 +1,80 @@
+*{
+    margin:0%
+}
+
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Nanum Gothic Coding', monospace;
+    background-color:aquamarine;
+}
+
+header{
+    background-color: purple;
+    padding: 10x;
+    color:rgb(255, 204, 0);
+    text-align: center;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+main{
+    padding: 30px 50px;
+}
+
+.card{
+    background-color: antiquewhite;
+    border: 1px solid #ccc;
+    padding: 20x;
+    margin-top: 15px;
+    border-radius:5px;
+}
+
+.lineInput{
+    display: grid;
+    margin-bottom: 10px;
+}
+
+input{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius: 3px;
+    outline:0;
+}
+
+button{
+    border:0px;
+    padding:10px;
+    outline:0;
+    background-color: purple;
+    color:yellow;
+    border-radius: 3px;
+    font-weight: bold;
+    transition:all ease 0.2s;
+}
+
+button:hover{
+    background-color: rgb(68, 0, 68);
+}
+
+.content{
+    margin-top: 15px;
+}
+
+table{
+    /*border-collapse: collapse; muda o estilo da table, soq gostei desse*/
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+table th{
+    background-color: orange;
+}
+
+table th, td{
+    padding:1px 5px;
+    text-align: left;
+}
+
+.center{
+    text-align: center;
+}
+
