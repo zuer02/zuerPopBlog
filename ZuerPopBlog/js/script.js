@@ -9,23 +9,12 @@ let td_comentario = '';
 let td_linkimdb = '';
 let td_acoes = '';
 
-function salvar(){
-        let filme = lerDados();
-        if(document.getElementById('button1').innerText == 'salvar') {
-            filme.editNumero = null; //botei essa bomba aqui
-        }else filme.editNumero = 1;
-        if(this.validaCampos(filme)){
-            if(filme.editNumero == null){
-                this.adicionar(filme);//Acho que nao precisa desse this., mas tá funcionando huehue
-                
-            }else{
-                //filme.numero = numero;
-                this.atualizar(filme.numero, filme);
-                document.getElementById('button1').innerText = 'salvar';
-            }
+function salvar(){ // armazenar a posicao da tabela ; 1)mudar o onclick ; 2) criar outro butao e botar desabilitado
+    let filme = lerDados(); 
     
-        }
-        
+    if(this.validaCampos(filme)){
+        this.adicionar(filme);//Acho que nao precisa desse this., mas tá funcionando huehue
+    }
         listaTabela();
         cancelar();
     }
@@ -34,15 +23,9 @@ function adicionar(filme){
     arrayfilmes.push(filme);
     }
 
-//function editou() problema: preciso de uma variavel para definir se eu editei o filme ou nao
-// nao posso colocar na lerDados() pq quando clico em atualizar ela é rodada novamente
-// preciso dela existindo antes do salvar pra poder utilizá-la no condicional pra definir
-// se vai atualizar ou se vai adicionar. em classe isso seria resolvido no construtor, que é chamado só quando constroi
-// so que com função não sei... penso em criar uma funcao
 
-function lerDados(){    
+function lerDados(){    // tem como colocar um valor predefinido, se passar algo ele sobrescreve, tentar usar isso  
     let filme = {} //aparentemente essa let cria um object tambem, legal
-
     filme.numero = arrayfilmes.length + 1;
     filme.nomeFilme = document.getElementById('nomeFilme').value;
     filme.diretor = document.getElementById('diretor').value;
@@ -100,25 +83,25 @@ function listaTabela(){
         td_linkimagem.classList.add('center');
         
         let imdb = document.createElement('a');
-        imdb.href = `https://${arrayfilmes[i].linkimdb}`; //mas aqui vai dar no diretório /o site que eu colocar auehauehaueaueh
+        imdb.href = arrayfilmes[i].linkimdb; //mas aqui vai dar no diretório /o site que eu colocar auehauehaueaueh
         imdb.target = 'blank'; // vai fazer o link abrir em outra pagina
 
         
         let imdbImg = document.createElement('img');
-        imdbImg.src = 'img/imdb.png';
+        imdbImg.src = 'img/imdb.svg';
         imdbImg.width = '50';
         
         imdb.appendChild(imdbImg);
         td_linkimdb.appendChild(imdb);
 
         let imgEdit = document.createElement('img');
-        imgEdit.src = 'img/editar.png';
+        imgEdit.src = 'img/editar.svg';
         imgEdit.width = '40';
         imgEdit.setAttribute("onclick","preparaEdicao("+JSON.stringify(arrayfilmes[i])+")");
         td_acoes.appendChild(imgEdit);
 
         let imgDelete = document.createElement('img');
-        imgDelete.src = 'img/delete.png';
+        imgDelete.src = 'img/delete.svg';
         imgDelete.width = '40';
         imgDelete.setAttribute("onclick","deletar("+arrayfilmes[i].numero+")");
         td_acoes.appendChild(imgDelete);
@@ -133,7 +116,7 @@ function cancelar(){
     document.getElementById('comentario').value = '';
     document.getElementById('linkimdb').value = '';
     
-    document.getElementById('button1').innerText = 'salvar';
+    //document.getElementById('button1').innerText = 'salvar';
 }
 
 function deletar(num){
@@ -146,7 +129,7 @@ function deletar(num){
             }
         }
     }
-    console.log(arrayfilmes);
+    cancelar();
 }
 
 function preparaEdicao(dados){
@@ -158,10 +141,13 @@ function preparaEdicao(dados){
     document.getElementById('linkimdb').value = dados.linkimdb;
     
     document.getElementById('button1').innerText = 'Atualizar';
+    document.getElementById('button1').setAttribute("onclick", "atualizaDados("+dados.numero+", "+JSON.stringify(dados)+")");
+    //document.getElementById('button1').onclick=`salvar(${dados.numero})`; nao deu certo*/
 }
 
-function atualizar(num, filme){
-    num = num - 1;
+/*function atualizar(num, filme){
+    //num = num - 1;
+    alert("oQ?"); //                         COMO ASSIM EU CLICO NO LAPIS DE EDITAR E ESSE ALERT É CHAMADO????????? O.o
     for(let i=0; i<arrayfilmes.length; i++){
         if(num == arrayfilmes[i].numero){
             arrayfilmes[i].nomeFilme = filme.nomeFilme;
@@ -172,4 +158,27 @@ function atualizar(num, filme){
             arrayfilmes[i].linkimdb = filme.linkimdb;
         }
     }
+}*/
+
+function atualizaDados(num, dados){
+    for(let i=0; i<arrayfilmes.length; i++){
+        if(num == arrayfilmes[i].numero){
+            dados.nomeFilme = document.getElementById('nomeFilme').value;
+            arrayfilmes[i].nomeFilme = dados.nomeFilme;
+            dados.diretor = document.getElementById('diretor').value;
+            arrayfilmes[i].diretor = dados.diretor;
+            dados.linkimagem = document.getElementById('linkimagem').value; 
+            arrayfilmes[i].linkimagem = dados.linkimagem;
+            dados.sinopse = document.getElementById('sinopse').value;
+            arrayfilmes[i].sinopse = dados.sinopse;
+            dados.comentario = document.getElementById('comentario').value;
+            arrayfilmes[i].comentario = dados.comentario;
+            dados.linkimdb = document.getElementById('linkimdb').value;
+            arrayfilmes[i].linkimdb = dados.linkimdb;
+    }
+    }
+    document.getElementById('button1').innerText = 'salvar';
+    document.getElementById('button1').setAttribute("onclick", "salvar()");
+    listaTabela();
+    cancelar();
 }
